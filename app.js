@@ -17,7 +17,7 @@ app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/line', lineRouter); //http://localhost:4000/line
+app.use('/line', lineRouter); //http://localhost:5000/line
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
