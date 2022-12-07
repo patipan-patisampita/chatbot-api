@@ -1,4 +1,3 @@
-const config = require('../config/line')
 const service = require('./handle-message')
 
 // event handler
