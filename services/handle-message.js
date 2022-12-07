@@ -8,5 +8,8 @@ exports.handleMessage = (event) => {
     }else if(msgText === "555"){
         msg = { type: "text", text: "ฮ่าๆๆๆ" }
     }
+    else{
+        msg = { type: "text", text: "สวัสดี กรุณาพิมพ์ข้อความอีกครั้ง" }
+    }
     return config.client.replyMessage(event.replyToken, msg)
 }
