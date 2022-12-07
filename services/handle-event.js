@@ -1,16 +1,22 @@
 const config = require('../config/line')
 
 // event handler
-exports.handleEvent = (event)=> {
-    console.log(event)
-    if (event.type !== 'message' || event.message.type !== 'text') {
-        // ignore non-text-message event
-        return Promise.resolve(null);
+exports.handleEvent = (event) => {
+    switch (event.type) {
+        case "message":
+            switch (event.message.type) {
+                case "text":
+                    console.log("text message")
+                    break;
+                case "sticker":
+                    console.log("sticker message")
+                    break;
+                default:
+                    throw new Error("Unknow message" + JSON.stringify(event.message.type))
+            }
+            break;
+        case "postback":
+
     }
 
-    // create a echoing text message
-    const echo = { type: 'text', text: event.message.text };
-
-    // use reply API
-    return config.client.replyMessage(event.replyToken, echo);
 }
