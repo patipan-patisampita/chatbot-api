@@ -16,7 +16,9 @@ exports.handleEvent = (event) => {
             }
             break;
         case "postback":
-
+            console.log("postback")
+            break;
+        default:
+            throw new Error("Unknow event" + JSON.stringify(event))
     }
-
 }
