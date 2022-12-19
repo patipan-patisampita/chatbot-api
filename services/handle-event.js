@@ -12,6 +12,9 @@ exports.handleEvent = (event) => {
                 case "sticker":
                     console.log("sticker message")
                     break;
+                case "image":
+                    console.log("images message")
+                    break;
                 default:
                     throw new Error("Unknow message" + JSON.stringify(event.message.type))
             }
