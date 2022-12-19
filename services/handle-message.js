@@ -1,5 +1,6 @@
 const config = require('../config/line');
 const { sendImage } = require('./send-image');
+const { sendText } = require('./send-text');
 
 exports.handleMessage = (event) => {
     let msg
@@ -8,7 +9,7 @@ exports.handleMessage = (event) => {
             msg = sendImage();
             break;
         default:
-            msg = sendText(event);
+            msg = sendText();
     }
     return config.client.replyMessage(event.replyToken, msg)
 }
