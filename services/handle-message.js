@@ -9,7 +9,7 @@ exports.handleMessage = (event) => {
             msg = sendImage();
             break;
         default:
-            msg = sendText();
+            msg = sendText(event);
     }
     return config.client.replyMessage(event.replyToken, msg)
 }
