@@ -11,7 +11,7 @@ exports.handleMessage = (event) => {
         msg = {
             "type": "sticker",
             "packageId": "446",
-            "stickerId": "1988"
+            "stickerId": "1994"
         }
     }
     else {
