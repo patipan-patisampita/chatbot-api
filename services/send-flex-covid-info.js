@@ -21,7 +21,7 @@ exports.sendFlexCovidInfo = async() => {
         aspectMode: 'cover',
         action: {
           type: 'uri',
-          uri: 'http://linecorp.com/',
+          uri: 'https://ddc.moph.go.th/covid19-dashboard/?dashboard=main',
         },
       },
       body: {
@@ -30,7 +30,7 @@ exports.sendFlexCovidInfo = async() => {
         contents: [
           {
             type: 'text',
-            text: 'วันที่ 21 ธ.ค. 2565',
+            text: 'วันที่ ' + response.data[0].update_date,
             weight: 'bold',
             size: 'xl',
             color: '#06AE24',
@@ -55,7 +55,7 @@ exports.sendFlexCovidInfo = async() => {
                   },
                   {
                     type: 'text',
-                    text: '2000 ราย',
+                    text: response.data[0].new_case +' ราย',
                     wrap: true,
                     color: '#C12B0D',
                     size: 'sm',
@@ -77,7 +77,7 @@ exports.sendFlexCovidInfo = async() => {
                   },
                   {
                     type: 'text',
-                    text: '20 ราย',
+                    text: response.data[0].new_death +' ราย',
                     wrap: true,
                     color: '#000000',
                     size: 'sm',
@@ -101,7 +101,7 @@ exports.sendFlexCovidInfo = async() => {
             action: {
               type: 'uri',
               label: 'ดูข้อมูลเพิ่มเติม',
-              uri: 'https://linecorp.com',
+              uri: 'https://ddc.moph.go.th/covid19-dashboard/?dashboard=main',
             },
             color: '#ffffff',
           },
