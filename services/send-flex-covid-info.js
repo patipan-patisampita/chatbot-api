@@ -3,6 +3,7 @@ exports.sendFlexCovidInfo = () => {
         type: "flex",
         altText: "รายงานสถานการณโควิด ประจำวัน",
         content: {}
+        
     };
 
     return msg;
